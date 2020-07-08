@@ -25,7 +25,9 @@ function App() {
   return (
     <div className="container mx-auto">
       <CardSearch searchText={(text) => setTerm(text)} />
-
+      {!isLoading && cards.length === 0 && (
+        <div className="flex justify-center mt-32 text-lg">No Cards found</div>
+      )}
       {isLoading ? (
         <div className="flex justify-center mt-32">
           <BounceLoader loading size={150} color={'#123abc'} />
