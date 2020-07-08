@@ -16,11 +16,15 @@ function App() {
   }, []);
 
   return (
-    <div className="grid grid-cols-5 gap-4">
+    <div className="container mx-auto grid grid-cols-5 gap-4">
       {cards.map((card) => (
         <Card
           key={card.id}
-          image={card.imageUrl}
+          image={
+            card.imageUrl
+              ? card.imageUrl
+              : 'https://vignette.wikia.nocookie.net/magic-lassemblee/images/f/fe/Verso.jpg/revision/latest/scale-to-width-down/340?cb=20180428125459&path-prefix=fr'
+          }
           name={card.name}
           rarity={card.rarity}
           text={card.text}
